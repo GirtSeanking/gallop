@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.system.mapper.RepairInfoMapper">
+    
+    <resultMap type="RepairInfo" id="RepairInfoResult">
+        <result property="repairId"    column="repair_id"    />
+        <result property="carId"    column="car_id"    />
+        <result property="repairContent"    column="repair_content"    />
+        <result property="status"    column="status"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <association property="carInfo" javaType="CarInfo" resultMap="CarInfoResult" />
+    </resultMap>
+
+    <resultMap type="CarInfo" id="CarInfoResult">
+        <id property="carId"    column="car_id"    />
+        <result property="brandId"    column="brand_id"    />
+        <result property="carTypeId"    column="car_type_id"    />
+        <result property="deptId"  column="dept_id"  />
+        <result property="carName"    column="car_name"    />
+        <result property="carDes"    column="car_des"    />
+        <result property="carImgs"    column="car_imgs"    />
+        <result property="rent" column="rent"  />
+        <result property="status"    column="status"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <association property="dept"    javaType="SysDept"         resultMap="deptResult" />
+        <association property="brand" javaType="BrandInfo"  resultMap="BrandInfoResult"  />
+        <association property="carType" javaType="CarTypeInfo" resultMap="CarTypeInfoResult"  />
+    </resultMap>
+
+    <resultMap id="deptResult" type="SysDept">
+        <id     property="deptId"    column="dept_id"     />
+        <result property="parentId"  column="parent_id"   />
+        <result property="deptName"  column="dept_name"   />
+        <result property="ancestors" column="ancestors"   />
+        <result property="orderNum"  column="order_num"   />
+        <result property="leader"    column="leader"      />
+        <result property="status"    column="dept_status" />
+    </resultMap>
+
+    <resultMap type="BrandInfo" id="BrandInfoResult">
+        <id property="brandId"    column="brand_id"    />
+        <result property="brandName"    column="brand_name"    />
+        <result property="brandDes"    column="brand_des"    />
+        <result property="status"    column="status"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <resultMap type="CarTypeInfo" id="CarTypeInfoResult">
+        <id property="carTypeId"    column="car_type_id"    />
+        <result property="carTypeName"    column="car_type_name"    />
+        <result property="status"    column="status"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectRepairInfoVo">
+        select r.repair_id, r.car_id, r.repair_content, r.status, r.create_by, r.create_time, r.update_by, r.update_time, r.remark, c.car_name, d.dept_name, b.brand_name, ct.car_type_name from repair_info r
+            left join car_info c on r.car_id = c.car_id
+            left join sys_dept d on c.dept_id = d.dept_id
+            left join brand_info b on c.brand_id = b.brand_id
+            left join car_type ct on c.car_type_id = ct.car_type_id
+    </sql>
+
+    <select id="selectRepairInfoList" parameterType="RepairInfo" resultMap="RepairInfoResult">
+        <include refid="selectRepairInfoVo"/>
+        <where>  
+            <if test="carId != null "> and c.car_id = #{carId}</if>
+            <if test="status != null  and status != ''"> and r.status = #{status}</if>
+             <if test="brandId != null">and b.brand_id = #{brandId}</if>
+            <!-- 数据范围过滤 -->
+            ${params.dataScope}
+        </where>
+    </select>
+    
+    <select id="selectRepairInfoByRepairId" parameterType="Long" resultMap="RepairInfoResult">
+        <include refid="selectRepairInfoVo"/>
+        where repair_id = #{repairId}
+    </select>
+        
+    <insert id="insertRepairInfo" parameterType="RepairInfo" useGeneratedKeys="true" keyProperty="repairId">
+        insert into repair_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="carId != null">car_id,</if>
+            <if test="repairContent != null and repairContent != ''">repair_content,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="carId != null">#{carId},</if>
+            <if test="repairContent != null and repairContent != ''">#{repairContent},</if>
+            <if test="status != null and status != ''">#{status},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateRepairInfo" parameterType="RepairInfo">
+        update repair_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="carId != null">car_id = #{carId},</if>
+            <if test="repairContent != null and repairContent != ''">repair_content = #{repairContent},</if>
+            <if test="status != null and status != ''">status = #{status},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where repair_id = #{repairId}
+    </update>
+
+    <delete id="deleteRepairInfoByRepairId" parameterType="Long">
+        delete from repair_info where repair_id = #{repairId}
+    </delete>
+
+    <delete id="deleteRepairInfoByRepairIds" parameterType="String">
+        delete from repair_info where repair_id in 
+        <foreach item="repairId" collection="array" open="(" separator="," close=")">
+            #{repairId}
+        </foreach>
+    </delete>
+</mapper>

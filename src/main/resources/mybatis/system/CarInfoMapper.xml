@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.system.mapper.CarInfoMapper">
+
+    <resultMap type="CarInfo" id="CarInfoResult">
+        <result property="carId"    column="car_id"    />
+        <result property="brandId"    column="brand_id"    />
+        <result property="carTypeId"    column="car_type_id"    />
+        <result property="deptId"  column="dept_id"  />
+        <result property="carName"    column="car_name"    />
+        <result property="carDes"    column="car_des"    />
+        <result property="carImgs"    column="car_imgs"    />
+        <result property="rent" column="rent"  />
+        <result property="status"    column="status"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <association property="dept"    javaType="SysDept"         resultMap="deptResult" />
+        <association property="brand" javaType="BrandInfo"  resultMap="BrandInfoResult"  />
+        <association property="carType" javaType="CarTypeInfo" resultMap="CarTypeInfoResult"  />
+    </resultMap>
+
+    <resultMap id="deptResult" type="SysDept">
+        <id     property="deptId"    column="dept_id"     />
+        <result property="parentId"  column="parent_id"   />
+        <result property="deptName"  column="dept_name"   />
+        <result property="ancestors" column="ancestors"   />
+        <result property="orderNum"  column="order_num"   />
+        <result property="leader"    column="leader"      />
+        <result property="phone" column="phone" />
+        <result property="status"    column="dept_status" />
+    </resultMap>
+
+    <resultMap type="BrandInfo" id="BrandInfoResult">
+        <id property="brandId"    column="brand_id"    />
+        <result property="brandName"    column="brand_name"    />
+        <result property="brandDes"    column="brand_des"    />
+        <result property="status"    column="status"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <resultMap type="CarTypeInfo" id="CarTypeInfoResult">
+        <id property="carTypeId"    column="car_type_id"    />
+        <result property="carTypeName"    column="car_type_name"    />
+        <result property="status"    column="status"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectCarInfoVo">
+        select c.car_id, c.brand_id, c.car_type_id, c.dept_id, c.car_name, c.car_des, c.car_imgs, c.rent, c.status, c.create_by, c.create_time, c.update_by, c.update_time, c.remark, d.dept_name, b.brand_name, ct.car_type_name from car_info c
+        left join sys_dept d on c.dept_id = d.dept_id
+        left join brand_info b on c.brand_id = b.brand_id
+        left join car_type ct on c.car_type_id = ct.car_type_id
+    </sql>
+
+    <select id="selectCarInfoList" parameterType="CarInfo" resultMap="CarInfoResult">
+        select c.car_id, c.brand_id, c.car_type_id, c.dept_id, c.car_name, c.car_des, c.car_imgs, c.rent, c.status, c.create_by, c.create_time, c.update_by, c.update_time, c.remark, d.dept_name, b.brand_name, ct.car_type_name, d.phone from car_info c
+        left join sys_dept d on c.dept_id = d.dept_id
+        left join brand_info b on c.brand_id = b.brand_id
+        left join car_type ct on c.car_type_id = ct.car_type_id
+        <where>
+            <if test="carName != null  and carName != ''">
+                and c.car_name like concat('%', #{carName}, '%')
+            </if>
+            <if test="brandId != null and brandId != 0">
+                and c.brand_id = #{brandId}
+            </if>
+            <if test="carTypeId != null and carTypeId != 0">
+                and c.car_type_id = #{carTypeId}
+            </if>
+            <if test="deptId != null and deptId != 0">
+                and c.dept_id = #{deptId}
+            </if>
+            <if test="status != null and status != ''">
+                and c.status = #{status}
+            </if>
+          <!-- 数据范围过滤 -->
+            ${params.dataScope}
+        </where>
+    </select>
+
+    <select id="selectCarInfoByCarId" parameterType="Long" resultMap="CarInfoResult">
+        <include refid="selectCarInfoVo"/>
+        where c.car_id = #{carId}
+    </select>
+
+    <insert id="insertCarInfo" parameterType="CarInfo" useGeneratedKeys="true" keyProperty="carId">
+        insert into car_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="brandId != null">brand_id,</if>
+            <if test="carTypeId != null">car_type_id,</if>
+            <if test="deptId != null">dept_id,</if>
+            <if test="carName != null and carName != ''">car_name,</if>
+            <if test="carDes != null">car_des,</if>
+            <if test="carImgs != null">car_imgs,</if>
+            <if test="rent != null">rent,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="brandId != null">#{brandId},</if>
+            <if test="carTypeId != null">#{carTypeId},</if>
+            <if test="deptId != null">#{deptId},</if>
+            <if test="carName != null and carName != ''">#{carName},</if>
+            <if test="carDes != null">#{carDes},</if>
+            <if test="carImgs != null">#{carImgs},</if>
+            <if test="rent != null">#{rent},</if>
+            <if test="status != null and status != ''">#{status},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCarInfo" parameterType="CarInfo">
+        update car_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="brandId != null">brand_id = #{brandId},</if>
+            <if test="carTypeId != null">car_type_id = #{carTypeId},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+            <if test="carName != null and carName != ''">car_name = #{carName},</if>
+            <if test="carDes != null">car_des = #{carDes},</if>
+            <if test="carImgs != null">car_imgs = #{carImgs},</if>
+            <if test="rent != null">rent = #{rent},</if>
+            <if test="status != null and status != ''">status = #{status},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where car_id = #{carId}
+    </update>
+
+    <delete id="deleteCarInfoByCarId" parameterType="Long">
+        delete from car_info where car_id = #{carId}
+    </delete>
+
+    <delete id="deleteCarInfoByCarIds" parameterType="String">
+        delete from car_info where car_id in
+        <foreach item="carId" collection="array" open="(" separator="," close=")">
+            #{carId}
+        </foreach>
+    </delete>
+</mapper>

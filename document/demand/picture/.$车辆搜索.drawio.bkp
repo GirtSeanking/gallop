@@ -1,0 +1,261 @@
+<mxfile host="Electron" modified="2023-10-22T12:26:19.354Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="t364FH43kkVlxORw5oBm" version="21.6.8" type="device">
+  <diagram name="第 1 页" id="Vl0hMlWtdFb83emJIyYM">
+    <mxGraphModel dx="759" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-1" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-2" value="User" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="30" y="110" width="100" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-3" value="HomePage&lt;br&gt;:GUI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="210" y="110" width="130" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-3">
+          <mxGeometry x="60" y="60" width="10" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-6" value="click onlineRentButton" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" target="FfBIv1Rf-NiAL4zUMakj-4">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="80.10000000000002" y="180.09999999999997" as="sourcePoint" />
+            <mxPoint x="190" y="180" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-27" value="CarInfoSearch&lt;br&gt;:GUI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="470" y="160" width="100" height="730" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-29" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-27">
+          <mxGeometry x="45" y="50" width="10" height="660" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-42" value="[carInfoList != null]&lt;br&gt;display(carInfoList)" style="html=1;align=center;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="FfBIv1Rf-NiAL4zUMakj-29" parent="FfBIv1Rf-NiAL4zUMakj-27" source="FfBIv1Rf-NiAL4zUMakj-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="120" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="120" y="100" />
+              <mxPoint x="120" y="150" />
+            </Array>
+            <mxPoint x="95" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-54" value="[carInfoList != null]&lt;br&gt;display(carInfoList)" style="html=1;align=center;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="FfBIv1Rf-NiAL4zUMakj-27" source="FfBIv1Rf-NiAL4zUMakj-29" target="FfBIv1Rf-NiAL4zUMakj-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="340" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="125" y="340" />
+              <mxPoint x="125" y="390" />
+            </Array>
+            <mxPoint x="60" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-65" value="[carInfoList != null]&lt;br&gt;display(carInfoList)" style="html=1;align=center;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="FfBIv1Rf-NiAL4zUMakj-27" source="FfBIv1Rf-NiAL4zUMakj-29" target="FfBIv1Rf-NiAL4zUMakj-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="600" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="130" y="580" />
+              <mxPoint x="130" y="630" />
+            </Array>
+            <mxPoint x="100" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-28" value="&amp;lt;&amp;lt;create&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;entryX=0;entryY=0.04;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="FfBIv1Rf-NiAL4zUMakj-4" target="FfBIv1Rf-NiAL4zUMakj-27">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="300" y="190" as="sourcePoint" />
+            <mxPoint x="430" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="360" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-30" value=":System" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="700" y="110" width="100" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-31" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-30">
+          <mxGeometry x="45" y="110" width="10" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-44" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-30">
+          <mxGeometry x="45" y="330" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-56" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-30">
+          <mxGeometry x="45" y="570" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-32" value="queryNewCarInfo()" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1" source="FfBIv1Rf-NiAL4zUMakj-29" target="FfBIv1Rf-NiAL4zUMakj-31">
+          <mxGeometry x="0.0012" width="80" relative="1" as="geometry">
+            <mxPoint x="510" y="220" as="sourcePoint" />
+            <mxPoint x="670" y="230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="637" y="220" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-33" value="return carInfoList" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" source="FfBIv1Rf-NiAL4zUMakj-31" target="FfBIv1Rf-NiAL4zUMakj-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="250" as="sourcePoint" />
+            <mxPoint x="560" y="250" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="620" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-34" value="[carInfoList == null]" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;entryX=1;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="FfBIv1Rf-NiAL4zUMakj-29" target="FfBIv1Rf-NiAL4zUMakj-35">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="500" y="270" as="sourcePoint" />
+            <mxPoint x="420" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-35" value="SystemError&lt;br&gt;:GUI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="300" y="255" width="100" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-36" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-35">
+          <mxGeometry x="45" y="55" width="10" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-38" value="display(ErrorMessage)" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="FfBIv1Rf-NiAL4zUMakj-36" parent="FfBIv1Rf-NiAL4zUMakj-35" source="FfBIv1Rf-NiAL4zUMakj-36">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="62.5" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="90" y="55" />
+              <mxPoint x="90" y="75" />
+            </Array>
+            <mxPoint x="75" y="92.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-40" value="" style="shape=umlDestroy;whiteSpace=wrap;html=1;strokeWidth=3;targetShapes=umlLifeline;" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-35">
+          <mxGeometry x="35" y="118" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-39" value="destroy()" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" source="FfBIv1Rf-NiAL4zUMakj-4" target="FfBIv1Rf-NiAL4zUMakj-36">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="290" y="350" as="sourcePoint" />
+            <mxPoint x="330" y="350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="320" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-43" value="click carTypeButton" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" source="FfBIv1Rf-NiAL4zUMakj-2" target="FfBIv1Rf-NiAL4zUMakj-29">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="150" y="430" as="sourcePoint" />
+            <mxPoint x="230" y="430" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="320" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-45" value="queryNewCarInfoByCarType()" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1" source="FfBIv1Rf-NiAL4zUMakj-29" target="FfBIv1Rf-NiAL4zUMakj-44">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="580" y="450" as="sourcePoint" />
+            <mxPoint x="660" y="450" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="635" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-46" value="return carInfoList" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" source="FfBIv1Rf-NiAL4zUMakj-44" target="FfBIv1Rf-NiAL4zUMakj-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="670" y="470" as="sourcePoint" />
+            <mxPoint x="590" y="470" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="630" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-48" value="[carInfoList == null]" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;entryX=1;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="FfBIv1Rf-NiAL4zUMakj-49">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="515" y="498" as="sourcePoint" />
+            <mxPoint x="420" y="505" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-49" value="SystemError&lt;br&gt;:GUI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="300" y="490" width="100" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-50" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-49">
+          <mxGeometry x="45" y="55" width="10" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-51" value="display(ErrorMessage)" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="FfBIv1Rf-NiAL4zUMakj-49" source="FfBIv1Rf-NiAL4zUMakj-50" target="FfBIv1Rf-NiAL4zUMakj-50">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="62.5" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="90" y="55" />
+              <mxPoint x="90" y="75" />
+            </Array>
+            <mxPoint x="75" y="92.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-52" value="" style="shape=umlDestroy;whiteSpace=wrap;html=1;strokeWidth=3;targetShapes=umlLifeline;" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-49">
+          <mxGeometry x="35" y="118" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-53" value="destroy()" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" target="FfBIv1Rf-NiAL4zUMakj-50">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="280" y="595" as="sourcePoint" />
+            <mxPoint x="330" y="585" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="320" y="595" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-55" value="click brandButton" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="80" y="680" as="sourcePoint" />
+            <mxPoint x="515" y="680" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="320" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-57" value="queryNewCarInfoByBrand()" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;" edge="1" parent="1" source="FfBIv1Rf-NiAL4zUMakj-29" target="FfBIv1Rf-NiAL4zUMakj-56">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="570" y="680" as="sourcePoint" />
+            <mxPoint x="730" y="700" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="620" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-58" value="return carInfoList" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" source="FfBIv1Rf-NiAL4zUMakj-56" target="FfBIv1Rf-NiAL4zUMakj-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="740" y="720" as="sourcePoint" />
+            <mxPoint x="550" y="720" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="625" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-59" value="[carInfoList == null]" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;entryX=1;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="FfBIv1Rf-NiAL4zUMakj-60">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="515" y="743" as="sourcePoint" />
+            <mxPoint x="420" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-60" value="SystemError&lt;br&gt;:GUI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="300" y="735" width="100" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-61" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-60">
+          <mxGeometry x="45" y="55" width="10" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-62" value="display(ErrorMessage)" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="FfBIv1Rf-NiAL4zUMakj-60" source="FfBIv1Rf-NiAL4zUMakj-61" target="FfBIv1Rf-NiAL4zUMakj-61">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="62.5" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="90" y="55" />
+              <mxPoint x="90" y="75" />
+            </Array>
+            <mxPoint x="75" y="92.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-63" value="" style="shape=umlDestroy;whiteSpace=wrap;html=1;strokeWidth=3;targetShapes=umlLifeline;" vertex="1" parent="FfBIv1Rf-NiAL4zUMakj-60">
+          <mxGeometry x="35" y="118" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FfBIv1Rf-NiAL4zUMakj-64" value="destroy()" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" target="FfBIv1Rf-NiAL4zUMakj-61">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="280" y="840" as="sourcePoint" />
+            <mxPoint x="330" y="830" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="320" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
