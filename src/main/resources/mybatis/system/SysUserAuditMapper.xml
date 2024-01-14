@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ruoyi.project.system.mapper.SysUserAuditMapper">
-    
+
     <resultMap type="SysUserAudit" id="SysUserAuditResult">
         <result property="userAuditId"    column="user_audit_id"    />
         <result property="userId"    column="user_id"    />
@@ -48,17 +48,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
     <select id="selectSysUserAuditList" parameterType="SysUserAudit" resultMap="SysUserAuditResult">
         <include refid="selectSysUserAuditVo"/>
-        <where>  
+        <where>
             <if test="userAuditName != null  and userAuditName != ''"> and user_audit_name like concat('%', #{userAuditName}, '%')</if>
             <if test="status != null  and status != ''"> and status = #{status}</if>
         </where>
     </select>
-    
+
     <select id="selectSysUserAuditByUserAuditId" parameterType="Long" resultMap="SysUserAuditResult">
         <include refid="selectSysUserAuditVo"/>
         where user_audit_id = #{userAuditId}
     </select>
-        
+
     <insert id="insertSysUserAudit" parameterType="SysUserAudit">
         insert into sys_user_audit
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -114,9 +114,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </delete>
 
     <delete id="deleteSysUserAuditByUserAuditIds" parameterType="String">
-        delete from sys_user_audit where user_audit_id in 
+        delete from sys_user_audit where user_audit_id in
         <foreach item="userAuditId" collection="array" open="(" separator="," close=")">
             #{userAuditId}
         </foreach>
     </delete>
+
+    <select id="selectSysUserAuditByUserId" parameterType="Long" resultMap="SysUserAuditResult">
+        <include refid="selectSysUserAuditVo"/>
+        where sua.user_id = #{userId}
+    </select>
 </mapper>

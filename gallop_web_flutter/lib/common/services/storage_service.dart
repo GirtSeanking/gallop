@@ -21,4 +21,8 @@ class StorageService {
     return _prefs.getString(key);
   }
 
+  Future<bool> remove(String key) async {
+    return await _prefs.remove(key);
+  }
+
 }

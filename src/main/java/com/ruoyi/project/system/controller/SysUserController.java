@@ -54,6 +54,9 @@ public class SysUserController extends BaseController
     @Autowired
     private ISysPostService postService;
 
+    @Autowired
+    private ISysUserAuditService userAuditService;
+
     /**
      * 获取用户列表
      */
@@ -124,7 +127,10 @@ public class SysUserController extends BaseController
     @Anonymous
     @PostMapping("/customerUser")
     public AjaxResult customerUser(@RequestBody SysUser sysUser) {
-        return success(userService.selectUserByUserName(sysUser.getUserName()));
+        SysUser user = userService.selectUserByUserName(sysUser.getUserName());
+        SysUserAudit userAudit = userAuditService.selectSysUserAuditByUserId(user.getUserId());
+        userAudit.setUser(user);
+        return success(userAudit);
     }
 
     @Anonymous

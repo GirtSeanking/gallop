@@ -5,7 +5,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ruoyi.framework.aspectj.lang.annotation.Anonymous;
 import com.ruoyi.project.system.domain.CarInfo;
+import com.ruoyi.project.system.domain.SysUser;
+import com.ruoyi.project.system.domain.SysUserAudit;
 import com.ruoyi.project.system.domain.vo.OrderCustomerVo;
+import com.ruoyi.project.system.service.ISysUserAuditService;
+import com.ruoyi.project.system.service.ISysUserService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +41,12 @@ public class OrderInfoController extends BaseController
 {
     @Autowired
     private IOrderInfoService orderInfoService;
+
+    @Autowired
+    private ISysUserService userService;
+
+    @Autowired
+    private ISysUserAuditService userAuditService;
 
     /**
      * 查询订单信息列表
@@ -88,6 +98,11 @@ public class OrderInfoController extends BaseController
     @PostMapping("/customerAddOrder")
     public AjaxResult customerAddOrder(@RequestBody OrderCustomerVo orderCustomerVo)
     {
+        SysUser user = userService.selectUserByUserName(orderCustomerVo.getUsername());
+        SysUserAudit userAudit = userAuditService.selectSysUserAuditByUserId(user.getUserId());
+        if (!"3".equals(userAudit.getStatus())) {
+            return AjaxResult.error("用户信息未审核认证");
+        }
         return toAjax(orderInfoService.customerAddOrder(orderCustomerVo));
     }
 

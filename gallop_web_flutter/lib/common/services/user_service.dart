@@ -29,4 +29,8 @@ class UserService {
     }
     return null;
   }
+
+  Future<bool> deleteUserInfo() async {
+    return await StorageService().remove(userKey);
+  }
 }

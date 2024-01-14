@@ -5,6 +5,7 @@ import 'package:gallop_web_flutter/common/services/user_service.dart';
 import 'package:gallop_web_flutter/common/utils/info_bar.dart';
 import 'package:gallop_web_flutter/common/utils/object_util.dart';
 import 'package:gallop_web_flutter/pages/login/login.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
 const String appTitle = '驰行在线租车';
@@ -224,9 +225,22 @@ class _NavigationPageState extends State<NavigationPage> {
               } else {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text("当前账户：$username"),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional.centerStart,
+                        child: Text("当前账户：$username"),
+                      ),
+                      const Gap(5),
+                      IconButton(icon: const Icon(FluentIcons.leave), onPressed: () async {
+                        await userService.deleteUserInfo();
+                        setState(() {
+                          username = "";
+                        });
+                        context.go(RouteName.home);
+                      })
+                    ],
                   ),
                 );
               }
